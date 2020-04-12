@@ -1,0 +1,212 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	background-color: hsl(0, 0%, 84%);
+}
+
+.TodoContainer {
+	min-width: 21.875rem;
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	margin: 0 auto;
+}
+
+.App-header {
+	display: flex;
+	justify-content: center;
+}
+
+.App-header h1 {
+	color: rgba(175, 47, 47, 0.15);
+	margin: 10% auto;
+	font-size: 6.25rem;
+}
+
+.addBar {
+	position: relative;
+	height: 3.75rem;
+}
+
+.addBar button {
+	border: none;
+	height: 100%;
+	width: 10%;
+	font-size: 1.875rem;
+	color: lightgray;
+	outline: none;
+	box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03),
+		2px 0 1px rgba(0, 0, 0, 0.03), inset 0 2px 1px rgba(0, 0, 0, 0.03);
+}
+
+.addBar .selected {
+	color: coral;
+	opacity: 0.6;
+}
+
+.addBar input {
+	width: 90%;
+	position: absolute;
+	height: 100%;
+	border: none;
+	outline: none;
+	font-style: italic;
+	color: lightcoral;
+	font-size: 1.8rem;
+	box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03),
+		2px 0 1px rgba(0, 0, 0, 0.03), inset 0 2px 1px rgba(0, 0, 0, 0.03);
+}
+
+::-webkit-input-placeholder {
+	color: #ddd;
+	font-style: italic;
+}
+
+.todoList ul li {
+	display: grid;
+	grid-template-columns: 1fr 8fr 1fr;
+	align-items: center;
+	position: relative;
+	list-style-type: none;
+	height: 3.75rem;
+	background: #f5f5f5;
+	color: gray;
+	font-size: 1.5rem;
+	border: solid 1px #ccc;
+	box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03),
+		2px 0 1px rgba(0, 0, 0, 0.03), inset 0 2px 1px rgba(0, 0, 0, 0.03);
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.todoList ul li .checked + span {
+	text-decoration: line-through;
+	opacity: 0.5;
+}
+
+.todoList ul li input {
+	margin-left: 0.625rem;
+	width: 1.25rem;
+	height: 1.25rem;
+	grid-column: 1/2;
+	opacity: 0.5;
+}
+
+.todoList ul li span {
+	grid-column: 2/3;
+}
+
+.todoList ul li button {
+	grid-column: 3/4;
+	width: 1.25rem;
+	height: 1.25rem;
+	margin-left: 0.625rem;
+	outline: none;
+	border: none;
+	background-color: rgb(221, 182, 167);
+	border-radius: 50%;
+	line-height: 1;
+	font-size: 1.25rem;
+	color: rgb(175, 105, 77);
+	opacity: 0.8;
+}
+
+.todoList ul li button:hover {
+	opacity: 1;
+	background-color: rgb(207, 149, 126);
+}
+
+.editing {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 100%;
+	border: 0.625rem;
+	padding: 0 0.3125rem;
+	outline: none;
+	border-radius: 0.375rem;
+	background-color: rgb(218, 204, 197);
+}
+
+.checkBar {
+	position: absolute;
+	left: 0.625rem;
+}
+
+.footer {
+	display: flex;
+	align-items: center;
+	height: fit-content;
+	position: relative;
+	justify-content: space-around;
+	background-color: rgb(228, 219, 215);
+	border: solid 1px #ccc;
+	box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03),
+		2px 0 1px rgba(0, 0, 0, 0.03), inset 0 2px 1px rgba(0, 0, 0, 0.03);
+	color: gray;
+	font-style: oblique;
+	height: 3.125rem;
+}
+
+.footer section button {
+	line-height: 1.5;
+	margin: 0.1875rem;
+	outline: none;
+	border-radius: 0.3125rem;
+	border: 1px solid rgb(192, 166, 155);
+	font-size: 0.9375rem;
+	color: rgb(119, 114, 113);
+	font-weight: 540;
+}
+
+.footer .clearCompleted {
+	line-height: 1.5;
+	outline: none;
+	font-style: oblique;
+	opacity: 0.6;
+	color: rgb(156, 73, 38);
+	border: 1px solid rgb(177, 168, 165);
+	background-color: rgb(197, 158, 141);
+	border-radius: 0.3125rem;
+}
+
+.footer .clearCompleted:hover {
+	opacity: 1;
+}
+
+.bottomBar .repeat {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.bottomBar .repeat .repeatFirst {
+	width: 97%;
+	height: 0.25rem;
+	background-color: rgb(218, 207, 207);
+	box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.05),
+		2px 0 1px rgba(0, 0, 0, 0.05), inset 0 2px 1px rgba(0, 0, 0, 0.05);
+}
+
+.bottomBar .repeat .repeatSecond {
+	width: 94%;
+	height: 0.25rem;
+	background-color: rgb(207, 195, 195);
+	box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.05),
+		2px 0 1px rgba(0, 0, 0, 0.05), inset 0 2px 1px rgba(0, 0, 0, 0.05);
+}
+
+.documentation {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin: 3.125rem;
+	line-height: 2;
+	font-size: 0.75rem;
+	color: #adadad;
+	text-shadow: 0 1px 0 rgba(187, 186, 186, 0.5);
+}
